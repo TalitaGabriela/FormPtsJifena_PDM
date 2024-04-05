@@ -1,6 +1,5 @@
-import * as React from "react";
-import { NavigationContainer } from "@react-navigation/native";
-import { StyleSheet, Text, View, TextInput, ScrollView, Pressable } from "react-native";
+import { StatusBar } from 'expo-status-bar';
+import { StyleSheet, Text, View, TextInput, ScrollView, Pressable, TouchableOpacity} from "react-native";
 
 // HEADER
 function Header() {
@@ -16,7 +15,7 @@ function Header() {
 // Início a aplicação:
 export default function App() {
   return (
-    <NavigationContainer>{
+   
         <ScrollView>
           <View>
 
@@ -76,6 +75,9 @@ export default function App() {
                 Selecione o time do jogador:
               </Text>
               {/* INCOMPLETO, FALTA A PARTE DE SELECIONAR iNFO OU AGRO */}
+              <TouchableOpacity style={styles.button} onPress={onPress}>
+                  <Text>Press Here</Text>
+              </TouchableOpacity>
             </View>
 
             {/* Cadastrar um jogador e sua camiseta */}
@@ -111,10 +113,8 @@ export default function App() {
               </Text>
             </View>
 
-            
+            <StatusBar style="light" />
           </View>
         </ScrollView>
-      }
-    </NavigationContainer>
   );
 }
