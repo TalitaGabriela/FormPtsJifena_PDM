@@ -43,22 +43,22 @@ export default function App() {
   const [placarT2, setPlacarT2] = useState(0);
 
   // Função para adicionar um jogador
-  const addJogador = (nome, camiseta) => {
+  const addJogador = () => {
     if (selecao === null || nome.trim() === "" || camiseta.trim() === "") {
       return;
     }
 
     const novoJogador = { nome, camiseta, pontos: 0 };
     setJogadores([...jogadores, novoJogador]);
-    // setNome('');
-    // setCamiseta('');
+    setNome('');
+    setCamiseta('');
   };
 
   // Função para incrementar os pontos de um jogador
   const addPontos = (index) => {
     const attJogadores = [...jogadores];
-    const nome = attJogadores[index];
-    nome.pontos++;
+    const jogador = attJogadores[index];
+    jogador.pontos++;
 
     if (selecao === 1) {
       setPlacarT1(placarT1 + 1);
@@ -82,7 +82,7 @@ export default function App() {
           <TextInput
             style={{ height: 30, width: "100%", borderWidth: 1 }}
             value={esporte}
-            onChange={setEsporte}
+            onChangeText={setEsporte}
             placeholder="Digite o Esporte"
           />
         </View>
@@ -110,7 +110,7 @@ export default function App() {
             style={{ height: 30, width: "100%", borderWidth: 1 }}
             value={time2}
             onChangeText={setTime2}
-            placeholder="Nome do Time 1"
+            placeholder="Nome do Time 2"
           />
         </View>
 
@@ -127,10 +127,10 @@ export default function App() {
             {" "}
             Placar: - {esporte}
           </Text>
-          <View>
+          <View style={{ flexDirection: 'row', justifyContent: 'center', alignItems: 'center' }}>
             <Text>{time1}</Text>
             <Text>{placarT1}</Text>
-            <Text>:</Text>
+            <Text> : </Text>
             <Text>{placarT2}</Text>
             <Text>{time2}</Text>
           </View>
@@ -167,6 +167,7 @@ export default function App() {
           <TextInput
             style={{ height: 30, width: "100%", borderWidth: 1 }}
             value={nome}
+            onChangeText={setNome}
             placeholder="Nome do jogador"
           />
 
@@ -175,12 +176,13 @@ export default function App() {
             <TextInput
               style={{ height: 30, width: "100%", borderWidth: 1 }}
               value={camiseta}
+              onChangeText={setCamiseta}
               placeholder="Número da camiseta do jogador"
             />
           </View>
 
           {/* Botão de Adicionar Jogador */}
-          <Pressable onPress={() => addJogador}>
+          <Pressable onPress={addJogador}>
             <Text
               style={{
                 textAlign: "center",
@@ -206,3 +208,4 @@ export default function App() {
     </ScrollView>
   );
 }
+
