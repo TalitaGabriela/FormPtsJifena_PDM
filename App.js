@@ -1,35 +1,14 @@
 import { StatusBar } from "expo-status-bar";
 import React, { useState } from "react";
-import {
-  StyleSheet,
-  Text,
-  View,
-  TextInput,
-  ScrollView,
-  Pressable,
-  TouchableOpacity,
-} from "react-native";
+import {StyleSheet, Text, View, TextInput, ScrollView, Pressable, TouchableOpacity} from "react-native";
 
 // HEADER
 function Header() {
   return (
     <View
-      style={{
-        display: "flex",
-        justifyContent: "center",
-        width: "100%",
-        backgroundColor: "grey",
-        alignItems: "center",
-      }}
-    >
+      style={{display: "flex", justifyContent: "center", width: "100%", backgroundColor: "grey", alignItems: "center"}}>
       <Text
-        style={{
-          color: "white",
-          fontSize: 25,
-          fontWeight: "bold",
-          textAlign: "center",
-        }}
-      >
+        style={{color: "white", fontSize: 25, fontWeight: "bold", textAlign: "center"}}>
         Marcador de Pontos do JIFENA
       </Text>
     </View>
@@ -84,6 +63,7 @@ export default function App() {
           <Header />
         </View>
 
+
         {/* Input 1 - DIGITE O ESPORTE */}
         <View style={{ paddingVertical: 10 }}>
           <Text style={{ width: "100%", fontSize: 28 }}>
@@ -96,6 +76,7 @@ export default function App() {
             placeholder="Digite o Esporte"
           />
         </View>
+
 
         {/* Escolhendo os times */}
         {/* Time 1 */}
@@ -119,6 +100,7 @@ export default function App() {
             placeholder="Nome do Time 2"
           />
         </View>
+
 
         {/* Placar */}
         <View style={{ marginBottom: 20 }}>
@@ -206,6 +188,7 @@ export default function App() {
               <Text>
                 {jogadores.nome} - {jogadores.camiseta}
               </Text>
+              
               {/* Botão para incrementar pontos do jogador */}
               <Pressable onPress={() => addPontos(index)}>
                 <Text style={styles.incrementButton}>+</Text>
