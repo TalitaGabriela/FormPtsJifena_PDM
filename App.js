@@ -104,7 +104,7 @@ export default function App() {
         {/* Time 2 */}
         <View>
           <Text style={{ width: "100%", paddingHorizontal: 25, fontSize: 28 }}>
-            Nome do Time 1:
+            Nome do Time 2:
           </Text>
           <TextInput
             style={{ height: 30, width: "100%", borderWidth: 1 }}
@@ -125,7 +125,7 @@ export default function App() {
             }}
           >
             {" "}
-            Placar: - {sport}
+            Placar: - {esporte}
           </Text>
           <View>
             <Text>{time1}</Text>
@@ -180,7 +180,7 @@ export default function App() {
           </View>
 
           {/* Botão de Adicionar Jogador */}
-          <Pressable>
+          <Pressable onPress={() => addJogador}>
             <Text
               style={{
                 textAlign: "center",
