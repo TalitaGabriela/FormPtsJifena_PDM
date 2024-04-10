@@ -196,12 +196,21 @@ export default function App() {
           </Pressable>
         </View>
 
-        {/* Lista de Jogadores */}
-        <View style={{ paddingHorizontal: 25 }}>
-          <Text style={{ width: "100%", fontSize: 20, paddingTop: 20 }}>
-            Lista de Jogadores:
-          </Text>
-        </View>
+        {/* Seção para exibir a lista de jogadores */}
+      <View>
+        <Text>Lista de Jogadores:</Text>
+        {/* Mapeia os jogadores e renderiza cada um */}
+        {jogadores.map((jogadores, index) => (
+          <View key={index}>
+            <Text>{jogadores.nome} - {jogadores.camiseta}</Text>
+            {/* Botão para incrementar pontos do jogador */}
+            <Pressable onPress={() => addPontos(index)}>
+              <Text>+</Text>
+            </Pressable>
+            <Text>{jogadores.pontos} pontos</Text>
+          </View>
+        ))}
+      </View>
 
         <StatusBar style="light" />
       </View>
