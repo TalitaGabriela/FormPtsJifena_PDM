@@ -2,7 +2,7 @@
   
   import { StatusBar } from "expo-status-bar";
   import React, { useState } from "react";
-  import {StyleSheet, Text, View, TextInput, ScrollView, Pressable, TouchableOpacity} from "react-native";
+  import {StyleSheet, Text, View, TextInput, ScrollView, Pressable} from "react-native";
 
   // HEADER
   function Header() {
